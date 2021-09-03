@@ -1,11 +1,12 @@
 from datetime import datetime
+
 date_format = '%m/%d/%Y'
 today = datetime.today().strftime('%m/%d/%Y')
 student = input('What\'s your name?')
 bcn = input('Are you in Barcelona? (please answer with yes or no)')
 
 if bcn == 'yes':
-	arrival = input('What day did you arrive in Barcelona? (please answer as mm/dd/yyyy)')
+	arrival = input('Hola What day did you arrive in Barcelona? (please answer as mm/dd/yyyy)')
 	first_date  = datetime.strptime(arrival, date_format)
 	sec_date = datetime.strptime(today, date_format)
 	diff = sec_date - first_date
@@ -24,5 +25,5 @@ with open('student_arrival.txt', 'a') as file:
 		else:
 			print(f'Welcome to Barcelona, {student}. We hope you are enjoying the first few days.', file=file)
 	else:
-		print('We hope to see you soon', file = file)	
+		print('f'{student}, We hope to see you soon', file = file)	
 
